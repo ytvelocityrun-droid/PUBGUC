@@ -1,0 +1,187 @@
+/* Core Styling & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Clean light layout background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* Main Layout Wrapper - Perfectly Balanced Layout */
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Left content thoda bada, right side shifted to center */
+    gap: 40px;
+    width: 100%;
+    max-width: 920px; /* Shifted inwards for compact, centered look */
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Brand Text Section (Left Side) - Perfectly Center-Aligned Vertically */
+.brand-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.brand-logo {
+    color: #1877f2; /* Professional Highlight Blue */
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.brand-tagline {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    color: #1c1e21;
+    font-weight: 400;
+}
+
+/* Auth Container (Right/Center-ish Side) - Clean Google Style Design */
+.auth-container {
+    background-color: #ffffff;
+    padding: 32px 28px;
+    border-radius: 8px;
+    border: 1px solid #dadde1; /* Thin border just like Google sign-in boxes */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 380px; /* Perfect square-ish portrait ratio */
+    justify-self: center; /* Forces container to align beautifully towards the middle */
+}
+
+/* Inputs Structure */
+.input-field-wrapper {
+    margin-bottom: 16px;
+}
+
+.input-field-wrapper input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dadde1;
+    border-radius: 4px; /* Premium slightly sharp edges */
+    font-size: 1rem;
+    color: #1c1e21;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Premium Google-like Blue Focus Effect */
+.input-field-wrapper input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 1px #1a73e8;
+}
+
+/* Custom Placeholder Styles */
+.input-field-wrapper input::placeholder {
+    color: #757575;
+}
+
+/* Action Button */
+#loginSubmitBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8; /* Crisp Google Blue */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: none; /* Keeps typography elegant */
+    letter-spacing: 0.2px;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#loginSubmitBtn:hover {
+    background-color: #1557b0;
+    box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
+}
+
+#loginSubmitBtn:active {
+    background-color: #1c3aa9;
+}
+
+/* Visual Separation Line */
+.form-divider {
+    border: none;
+    border-bottom: 1px solid #dadde1;
+    margin: 24px 0 20px 0;
+}
+
+/* Notice Text under Divider (Optimized for Light Backgrounds) */
+.portal-notice {
+    background: rgba(255, 153, 0, 0.08); /* Sophisticated light gold tint */
+    border-left: 4px solid #ff9900;       /* Warning/Alert colored accent border */
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    border-radius: 0 4px 4px 0;
+    text-align: left; /* Kept left aligned for better readability of rules */
+}
+
+.portal-notice p, .portal-notice ul, .portal-notice li {
+    color: #4a4a4a; /* Dark slate grey for sharp text readability */
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.portal-notice strong {
+    color: #d97706; /* Dark amber tone to balance premium accent hierarchy */
+}
+
+/* Status Response Indicator */
+.submission-alert {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    display: none;
+}
+
+.submission-alert.active-success {
+    display: block;
+    color: #137333;
+}
+
+.submission-alert.active-error {
+    display: block;
+    color: #c5221f;
+}
+
+/* Responsive adjustment for Smaller Screens (Mobile Optimization) */
+@media (max-width: 768px) {
+    .main-wrapper {
+        grid-template-columns: 1fr; /* Switch to stack vertically on mobile phones */
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .brand-section {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .brand-logo {
+        font-size: 2.4rem;
+    }
+    
+    .brand-tagline {
+        font-size: 1.15rem;
+    }
+
+    .auth-container {
+        max-width: 100%; /* Fully responsive on wider viewports */
+    }
+}
